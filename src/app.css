@@ -1,0 +1,63 @@
+:root {
+  --color-red: #eb5757;
+  --color-orange: #f2994a;
+  --color-white: #ffffff;
+  --color-black: #222244;
+  --color-green: #27ae60;
+  --color-mint: #6fcf97;
+  --default-border-radius: 10px;
+  --progress-bg: #545050;
+  --progress-fg: var(--color-mint);
+  --progress-br: var(--default-border-radius);
+  --progress-height: 0.5rem;
+}
+
+html {
+  padding: 10px;
+}
+body {
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
+}
+
+.flex-horz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+}
+
+progress {
+  height: var(--progress-height);
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-br);
+}
+progress::-webkit-progress-bar {
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-br);
+  width: 100%;
+  transition: width 0.75s ease-in-out;
+}
+
+progress.hidden::-webkit-progress-bar {
+  width: 0;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--progress-fg);
+  border-radius: var(--progress-br);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--progress-fg);
+  border-radius: var(--progress-br);
+}
