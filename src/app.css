@@ -6,6 +6,7 @@
   --color-green: #27ae60;
   --color-mint: #6fcf97;
   --default-border-radius: 10px;
+  --default-transition: 0.25s ease-in-out;
   --progress-bg: #545050;
   --progress-fg: var(--color-mint);
   --progress-br: var(--default-border-radius);
@@ -45,7 +46,6 @@ progress::-webkit-progress-bar {
   background-color: var(--progress-bg);
   border-radius: var(--progress-br);
   width: 100%;
-  transition: width 0.75s ease-in-out;
 }
 
 progress.hidden::-webkit-progress-bar {
@@ -55,6 +55,7 @@ progress.hidden::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: var(--progress-fg);
   border-radius: var(--progress-br);
+  transition: width 0.75s ease-in-out;
 }
 
 progress::-moz-progress-bar {

@@ -11,25 +11,36 @@
 }
 
 .card,
-.card::before {
+.card::before,
+.card::after {
   box-sizing: border-box;
   width: 500px;
   height: 200px;
   padding: 10px;
   border-radius: 10px;
-  background: var(--card-background);
 }
 
-.card::before {
+.card::before,
+.card::after {
+  background-size: cover;
+  background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    var(--card-background);
   display: block;
   position: absolute;
   left: 0;
   top: 0;
-  background-color: black;
   content: "";
-  z-index: -1;
-  filter: blur(20px);
+}
+.card::before {
   opacity: 0.75;
+  z-index: -2;
+  filter: blur(20px);
+}
+.card::after {
+  z-index: -1;
+  /* filter: blur(10px); */
+  /* transform: scale(1.2); */
 }
 
 .card * {
