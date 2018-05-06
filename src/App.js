@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./Card";
 
+import "./vars.css";
 import "./app.css";
 
 class App extends Component {

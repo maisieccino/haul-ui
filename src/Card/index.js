@@ -17,6 +17,7 @@ export default class Card extends Component {
     progress: PropTypes.number,
     progressMax: PropTypes.number,
     background: PropTypes.string,
+    backgroundShade: PropTypes.bool,
   };
   static defaultProps = {
     title: "<No title provided>",
@@ -24,7 +25,8 @@ export default class Card extends Component {
     icon: <Icon.File {...iconProps} />,
     progress: 0,
     progressMax: 0,
-    background: "linear-gradient(45deg,var(--color-green),var(--color-mint))",
+    background: "linear-gradient(45deg,var(--color-red),var(--color-orange))",
+    backgroundShade: false,
   };
 
   constructor(props) {
@@ -48,9 +50,16 @@ export default class Card extends Component {
   }
 
   render() {
-    const { title, contexts, icon, progress, progressMax } = this.props;
+    const {
+      title,
+      contexts,
+      icon,
+      progress,
+      progressMax,
+      backgroundShade,
+    } = this.props;
     return (
-      <div className="card" ref="card">
+      <div className={`card ${backgroundShade ? "shade" : ""}`} ref="card">
         <h3 className="cardTitle">{title}</h3>
         <p className="cardText">{contexts.map(ctx => `#${ctx}`).join(" ")}</p>
         <div className="flex-horz">
@@ -68,5 +77,63 @@ export default class Card extends Component {
         </div>
       </div>
     );
+  }
+}
+
+const basePropTypes = {
+  title: PropTypes.string,
+  contexts: PropTypes.arrayOf(PropTypes.string),
+  background: PropTypes.string,
+  backgroundShade: PropTypes.bool,
+};
+
+const baseDefaultProps = {
+  title: "<No title provided>",
+  contexts: [],
+  background: "linear-gradient(45deg,var(--color-red),var(--color-orange))",
+  backgroundShade: false,
+};
+
+export class DocumentCard extends Component {
+  static propTypes = basePropTypes;
+  static defaultProps = baseDefaultProps;
+
+  render() {
+    const icon = <Icon.File {...iconProps} />;
+    return <Card icon={icon} {...this.props} />;
+  }
+}
+
+export class TextCard extends Component {
+  static propTypes = basePropTypes;
+  static defaultProps = baseDefaultProps;
+
+  render() {
+    const icon = <Icon.FileText {...iconProps} />;
+    return <Card icon={icon} {...this.props} />;
+  }
+}
+
+export class ListCard extends Component {
+  static propTypes = {
+    ...basePropTypes,
+    progress: PropTypes.number.isRequired,
+    progressMax: PropTypes.number.isRequired,
+  };
+  static defaultProps = baseDefaultProps;
+
+  render() {
+    const icon = <Icon.CheckSquare {...iconProps} />;
+    return <Card icon={icon} {...this.props} />;
+  }
+}
+
+export class StashCard extends Component {
+  static propTypes = basePropTypes;
+  static defaultProps = baseDefaultProps;
+
+  render() {
+    const icon = <Icon.Archive {...iconProps} />;
+    return <Card icon={icon} {...this.props} />;
   }
 }

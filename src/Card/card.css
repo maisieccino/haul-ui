@@ -22,15 +22,20 @@
 
 .card::before,
 .card::after {
+  background: var(--card-background);
   background-size: cover;
   background-position: 50% 50%;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    var(--card-background);
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   content: "";
+}
+.card.shade::after {
+  filter: brightness(0.65);
+}
+.card.shade::before {
+  filter: brightness(0.65), blur(20px);
 }
 .card::before {
   opacity: 0.75;
@@ -39,8 +44,6 @@
 }
 .card::after {
   z-index: -1;
-  /* filter: blur(10px); */
-  /* transform: scale(1.2); */
 }
 
 .card * {

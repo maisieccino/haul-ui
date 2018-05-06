@@ -1,0 +1,18 @@
+:root {
+  --color-red: #eb5757;
+  --color-orange: #f2994a;
+  --color-yellow: #f2c94c;
+  --color-green: #27ae60;
+  --color-mint: #6fcf97;
+  --color-lightblue: #56ccf2;
+  --color-blue: #2d9cdb;
+  --color-purple: #bb6bd9;
+  --color-white: #ffffff;
+  --color-black: #222244;
+  --default-border-radius: 10px;
+  --default-transition: 0.25s ease-in-out;
+  --progress-bg: #545050;
+  --progress-fg: var(--color-mint);
+  --progress-br: var(--default-border-radius);
+  --progress-height: 0.5rem;
+}
