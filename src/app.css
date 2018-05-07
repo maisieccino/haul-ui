@@ -2,7 +2,7 @@ html {
   padding: 10px;
 }
 body {
-  font-family: "Barlow", Arial, Helvetica, sans-serif;
+  font-family: "Apercu", "Barlow", Arial, Helvetica, sans-serif;
 }
 
 .flex-horz {
@@ -23,6 +23,7 @@ progress {
   -moz-appearance: none;
   appearance: none;
 
+  /* border: solid 1px var(--color-black); */
   border: none;
   background-color: var(--progress-bg);
   border-radius: var(--progress-br);

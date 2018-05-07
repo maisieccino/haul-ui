@@ -81,8 +81,8 @@ listStories.add("default", () => (
       "linear-gradient(45deg,var(--color-blue),var(--color-purple))",
     )}
     backgroundShade={boolean("Background Shade", false)}
-    progress={5}
-    progressMax={10}
+    progress={number("Progress", 5)}
+    progressMax={number("Progress Max", 10)}
   />
 ));
 
