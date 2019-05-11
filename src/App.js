@@ -9,6 +9,7 @@ class App extends Component {
     const contexts = ["work", "work/client_company"];
     return (
       <div className="App">
+        <h1>Reminders For Today</h1>
         <Card
           title="Client Company Invoice - September 2018"
           contexts={contexts}

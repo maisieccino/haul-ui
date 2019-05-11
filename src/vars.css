@@ -15,4 +15,8 @@
   --progress-fg: var(--color-mint);
   --progress-br: var(--default-border-radius);
   --progress-height: 0.5rem;
+  --button-bg: var(--color-black);
+  --button-fg: var(--color-white);
+  --font-body: "Apercu", "Barlow", Arial, Helvetica, sans-serif;
+  --font-heading: "Optician Sans", "Barlow", sans-serif;
 }

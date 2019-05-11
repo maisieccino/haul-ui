@@ -51,6 +51,7 @@
   z-index: 1;
   color: var(--color-white);
   margin: 0;
+  font-family: var(--font-body);
 }
 
 .card progress {
